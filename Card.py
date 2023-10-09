@@ -40,10 +40,21 @@ class Dice:
     def prin(self):
          print(self.a)
 
+import random
+
+ram = random.randint(1,4)
 
 a,b,c,d,e,f = map(int, input().split())
 
 dice = Dice(a,b,c,d,e,f)
 
+WESN = ['W', 'E', 'S', 'N']
+
 for i in range(int(input())):
     x1, x2 = map(int, input().split())
+    while True:
+        ram = random.randint(0,3)
+        dice.rot(WESN[ram])
+        if dice.a == x1 and dice.b == x2:
+            print(dice.c)
+            break
